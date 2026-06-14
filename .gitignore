@@ -1,0 +1,14 @@
+.DS_Store
+
+# Generated simulation files
+sim/
+*.vcd
+*.vvp
+*.log
+
+# Private/reference material
+docs/reference/
+docs/**/*.pdf
+docs/**/*.xlsx
+docs/**/*Resume*
+docs/**/*resume*
