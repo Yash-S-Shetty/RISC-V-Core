@@ -18,7 +18,7 @@ logic [31:0] regfile [31:0];
 
 always_ff @(posedge i_clk) begin
     if (!i_rst_n) for (int i=0; i<32; i++) regfile[i] <= 32'b0;
-    else if (i_wr_en && (i_rd_address != 5'd0)) regfile[i_rd_address] <= i_rd_wb;
+    else if (i_wr_en && (i_rd_address != 5'd0)) regfile[i_rd_address] <= i_rd_wb; // The Second Condition is Redundant as READ takes care
 end
 
 assign o_rs1_data = (i_rs1_address == 5'd0) ? 32'b0 : regfile[i_rs1_address];
