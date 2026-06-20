@@ -31,10 +31,10 @@ tb_i_inst = inst;
 tb_i_imm_sel = imm_sel;
 #5;
 if (expected === tb_o_ext_imm) begin
-    $display("Successful : Instruction=%b Immediate Select=%b Extended Immediate=%b Expected=%b Test Name=%s",
+    $display("Successful : Instruction=%h Immediate Select=%h Extended Immediate=%h Expected=%h Test Name=%s",
              inst, imm_sel, tb_o_ext_imm, expected, test_name);
 end else begin
-    $error("Fail : Instruction=%b Immediate Select=%b Extended Immediate=%b Expected=%b Test Name=%s",
+    $error("Fail : Instruction=%h Immediate Select=%h Extended Immediate=%h Expected=%h Test Name=%s",
            inst, imm_sel, tb_o_ext_imm, expected, test_name);
 end
 
@@ -45,8 +45,8 @@ initial begin
     check_imm(32'h70012345, I_TYPE, 32'h00000700, "I TYPE POSITIVE");
     check_imm(32'h80FFF000, S_TYPE, 32'hFFFFF800, "S TYPE NEGATIVE");
     check_imm(32'h70FFF000, S_TYPE, 32'h00000700, "S TYPE POSITIVE");
-    check_imm(32'b10000001111111111111000000000000, B_TYPE, 32'hFFFFF000, "B TYPE NEGATIVE");
-    check_imm(32'b00000001111111111111000000000000, B_TYPE, 32'h00000000, "B TYPE ZERO");
+    check_imm(32'h81FFF000, B_TYPE, 32'hFFFFF000, "B TYPE NEGATIVE");
+    check_imm(32'h01FFF000, B_TYPE, 32'h00000000, "B TYPE ZERO");
     check_imm(32'h542306C5, B_TYPE, 32'h00000D4C, "B TYPE POSITIVE (MIXED)");
     check_imm(32'hABCDE123, U_TYPE, 32'hABCDE000, "U TYPE");
     check_imm(32'hAABAA4C2, J_TYPE, 32'hFFFAAAAA, "J TYPE NEGATIVE (MIXED)");
