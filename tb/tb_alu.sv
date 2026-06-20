@@ -4,7 +4,7 @@
 
 import alu_pkg::*;
 
-module alu_tb;
+module tb_alu;
 logic [31:0] tb_i_rs1;      // Source register 1
 logic [31:0] tb_i_rs2;      // Source register 2 / immediate value
 logic [3:0]  tb_i_alu_ctrl; // ALU operation select signal
@@ -50,8 +50,8 @@ endtask
 
  
 initial begin
-    $dumpfile("sim/alu_tb.vcd");
-    $dumpvars(0, alu_tb);
+    $dumpfile("sim/tb_alu.vcd");
+    $dumpvars(0, tb_alu);
 end
 
 // Test 

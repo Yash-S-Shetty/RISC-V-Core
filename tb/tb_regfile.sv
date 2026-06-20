@@ -24,7 +24,7 @@ regfile DUT (.i_clk(tb_i_clk),
             .o_rs2_data(tb_o_rs2_data));
 
 initial begin
-    $dumpfile("sim/regfile_tb.vcd");
+    $dumpfile("sim/tb_regfile.vcd");
     $dumpvars(0, tb_regfile);
 end
 
